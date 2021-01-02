@@ -515,7 +515,7 @@ void settings_submenu_selector(unsigned int idx) {
 #ifdef UI_NANO_X
 UX_STEP_NOCB(ux_menu_about_1_step, bnnn,
              {
-                 "Monero",
+                 "BitTube Cash",
                  "(c) Ledger SAS",
                  "Spec  " XSTR(SPEC_VERSION),
                  "App  " XSTR(MONERO_VERSION),
@@ -523,7 +523,7 @@ UX_STEP_NOCB(ux_menu_about_1_step, bnnn,
 #else
 UX_STEP_NOCB(ux_menu_about_1a_step, bn,
              {
-                 "Monero",
+                 "BitTube Cash",
                  "(c) Ledger SAS",
              });
 

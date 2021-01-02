@@ -15,7 +15,8 @@
 #  limitations under the License.
 #*******************************************************************************
 
-TARGET_NAME := TARGET_NANOX
+#TARGET_NAME := TARGET_NANOX
+TARGET_NAME := TARGET_BLUE
 
 -include Makefile.env
 ifeq ($(BOLOS_SDK),)
@@ -23,9 +24,9 @@ $(error Environment variable BOLOS_SDK is not set)
 endif
 include $(BOLOS_SDK)/Makefile.defines
 
-#Monero /44'/128'
-APP_LOAD_PARAMS=  --path "2147483692/2147483776" --curve secp256k1 $(COMMON_LOAD_PARAMS) --appFlags 0x240
-APPNAME = "Monero"
+#BitTubeCash /44'/598'
+APP_LOAD_PARAMS= --curve secp256k1 $(COMMON_LOAD_PARAMS) --appFlags 0x240
+APPNAME = "BitTube Cash"
 
 ifeq ($(TARGET_NAME),TARGET_BLUE)
 ICONNAME = images/icon_monero_blue.gif
@@ -37,6 +38,8 @@ endif
 
 #DEFINES += MONERO_ALPHA
 #DEFINES += MONERO_BETA
+DEFINES += DEBUG_HWDEVICE
+DEFINES += IODUMMYCRYPT
 
 APPVERSION_M=1
 APPVERSION_N=7
@@ -124,7 +127,7 @@ ifneq ($(DEBUG),0)
   DEFINES += DEBUG_HWDEVICE
   DEFINES += IODUMMYCRYPT  # or IONOCRYPT
   # Stagenet network by default
-  DEFINES += MONERO_BETA
+  DEFINES += MONERO_ALPHA
 else
 
 	DEFINES   += PRINTF\(...\)=
